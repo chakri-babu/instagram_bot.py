@@ -1,14 +1,12 @@
 from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.firefox.options import Options
 import time
 import random
 
-# Initialize Chrome WebDriver
-options = webdriver.ChromeOptions()
-options.add_argument('--no-sandbox')
-options.add_argument('--disable-dev-shm-usage')
-options.add_argument('--headless')  # Optional: run in headless mode
-driver = webdriver.Chrome(options=options)
+# Initialize Firefox WebDriver
+options = Options()
+options.headless = True  # Optional: run in headless mode
+driver = webdriver.Firefox(options=options)
 
 # Function to log in to Instagram
 def login(username, password):
